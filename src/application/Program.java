@@ -14,6 +14,7 @@ public class Program {
 		
 		Scanner sc = new Scanner(System.in);
 		ChessMatch chessMatch = new ChessMatch();
+		String msg = (UI.ANSI_RED + "\n*Press enter and try something valid*" + UI.ANSI_RESET);
 		
 		while (true) {
 			try {
@@ -30,11 +31,11 @@ public class Program {
 				ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
 			}
 			catch (ChessException e) {
-				System.out.println(e.getMessage() + "\n*Press enter and try something valid*");
+				System.out.println(e.getMessage() + msg);
 				sc.nextLine();
 			}
 			catch (InputMismatchException e) {
-				System.out.println(e.getMessage() + "\n*Press enter and try something valid*");
+				System.out.println(e.getMessage() + msg);
 				sc.nextLine();
 			}
 		}
