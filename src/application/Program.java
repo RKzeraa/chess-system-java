@@ -19,7 +19,7 @@ public class Program {
 		String msg = (UI.ANSI_RED + "\n*Press enter and try something valid*" + UI.ANSI_RESET);
 		List<ChessPiece> captured = new ArrayList<>();
 		
-		while (true) {
+		while (!chessMatch.getCheckMate()) {
 			try {
 				UI.clearScreen();
 				UI.printMatch(chessMatch, captured);
@@ -51,6 +51,8 @@ public class Program {
 				sc.nextLine();
 			}
 		}
+		UI.clearScreen();
+		UI.printMatch(chessMatch, captured);
 	}
 
 }
